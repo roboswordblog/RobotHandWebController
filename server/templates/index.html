@@ -22,10 +22,21 @@
         "4": document.getElementById("4").value,
         "5": document.getElementBYId("5").value
       }
-      
-    }
-    async function changeHand(){
-      
+       fetch('/sendHandAngles', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(sendData) 
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+ 
     }
   </script>
 </body>
