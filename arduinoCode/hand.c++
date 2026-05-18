@@ -37,8 +37,9 @@ void down(int d) {
 void moveAngleEntire(int angle) { servo5.write(angle); }
 
 void twistClaw(int angle) { servo4.write(angle); }
-void claw() {}
-
+void moveOne(int angle){servo1.write(angle);}
+void moveTwo(int angle){servo2.write(angle);}
+void moveThree(int angle){servo3.write(angle);}
 void loop() {
   delay(2000);
 
