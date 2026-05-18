@@ -14,6 +14,8 @@ def getData():
     three = request.get_json("3")
     four = request.get_json("4")
     five = request.get_json("5")
-    
+    message = f"{one},{two},{three},{four},{five},{six}"
+    ser.write(message.encode('utf-8'))
+
 if __name__ == "__main__":
   app.run(debug=True)
