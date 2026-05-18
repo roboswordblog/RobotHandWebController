@@ -12,8 +12,8 @@ void setup() {
   servo2.attach(5);
   servo3.attach(6);
   servo4.attach(9);
- // servo5.attach(10);
-  
+  servo5.attach(10);
+  Serial.begin(9600); 
   servo3.write(-90);
   servo2.write(-90);
   servo5.write(150);
@@ -40,7 +40,10 @@ void twistClaw(int angle) { servo4.write(angle); }
 void moveOne(int angle){servo1.write(angle);}
 void moveTwo(int angle){servo2.write(angle);}
 void moveThree(int angle){servo3.write(angle);}
+
 void loop() {
-  delay(2000);
+   if (Serial.available() > 0) {
+    String newString = Serial.readString();
+  }
 
 }
