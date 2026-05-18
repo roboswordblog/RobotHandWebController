@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify,request
-
+import serial
 app = Flask(__name__)
+ser = serial.Serial('COM3', baudrate=9600, timeout=1)
 
 @app.route("/")
 def index():
