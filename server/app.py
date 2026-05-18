@@ -16,6 +16,7 @@ def getData():
     five = request.get_json("5")
     message = f"{one},{two},{three},{four},{five},{six}"
     ser.write(message.encode('utf-8'))
+    return jsonify({"good":True})
 
 if __name__ == "__main__":
   app.run(debug=True)
