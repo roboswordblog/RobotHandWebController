@@ -44,6 +44,7 @@ void moveThree(int angle){servo3.write(angle);}
 void loop() {
    if (Serial.available() > 0) {
     String newString = Serial.readString();
+    
   }
 
 }
