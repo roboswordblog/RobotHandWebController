@@ -6,7 +6,6 @@ Servo servo3;
 Servo servo4;
 Servo servo5;
 
-bool downOrUp = false;
 void setup() {
   servo1.attach(3);
   servo2.attach(5);
@@ -34,17 +33,26 @@ void down(int d) {
   servo2.write(60);
 }
 
-void moveAngleEntire(int angle) { servo5.write(angle); }
-
-void twistClaw(int angle) { servo4.write(angle); }
-void moveOne(int angle){servo1.write(angle);}
-void moveTwo(int angle){servo2.write(angle);}
-void moveThree(int angle){servo3.write(angle);}
 
 void loop() {
    if (Serial.available() > 0) {
-    String newString = Serial.readString();
+    String[] angles = {};
+    String data = Serial.readString();
+    while (data.length() > 0 && count < 4) {
+        int index = data.indexOf(',');
+        if (index == -1) { 
+          angles[count++] = data;
+          break;
+      } else {
+          angles[count++] = data.substring(0, index);
+          data = data.substring(index + 1);
+      }
+    }
+    servo1.write(angles[0]);
+    servo2.write(angles[1]);
+    servo3.write(angles[2]);
+    servo4.write(angles[3]);
+    servo5.write(angles[4]);
     
-  }
-
+}
 }
