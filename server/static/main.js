@@ -24,3 +24,10 @@ async function sendData(){
     }
 
 setInterval(sendData,100);
+function down(){
+  one = document.getElementById("1");
+  two = document.getElementById("2");
+  three = document.getElementById("3");
+  four = document.getElementById("4");
+  five = document.getElementById("5");
+}
