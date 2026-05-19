@@ -30,4 +30,5 @@ function down(){
   three = document.getElementById("3");
   four = document.getElementById("4");
   five = document.getElementById("5");
+  
 }
