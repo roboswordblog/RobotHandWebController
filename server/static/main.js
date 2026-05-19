@@ -25,10 +25,14 @@ async function sendData(){
 
 setInterval(sendData,100);
 function down(){
-  one = document.getElementById("1");
   two = document.getElementById("2");
   three = document.getElementById("3");
-  four = document.getElementById("4");
-  five = document.getElementById("5");
-  
+  three.value = -90;
+  two.value = 60;
+}
+function lunge(){
+  two = document.getElementById("2");
+  three = document.getElementById("3");
+  three.value = 90;
+  two.value = 90;     
 }
